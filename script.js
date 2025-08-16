@@ -30,7 +30,6 @@ function listTagsAndAttrs(container, panel, offset) {
     };
     
     if (child.children.length !== 0) {
-      offset++;
       listTagsAndAttrs(child, div, offset + 1);
     } else {
       const text = document.createElement("p");
@@ -38,7 +37,7 @@ function listTagsAndAttrs(container, panel, offset) {
       div.insertBefore(text, div.querySelector("p:first-of-type"));
     }
 
-    div.style["margin-left"] = offset * 4 + "px";
+    div.style["margin-left"] = offset * 8 + "px";
     panel.appendChild(div);
   };
 }
