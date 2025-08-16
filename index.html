@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">
+    <title>Forms</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/dinosaur.png">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="main">
+      <form action="https://httpbin.org/post" method="post">
+        <h2>Contact Details</h2>
+        <section>
+          <div class="container">
+            <label for="search">Search: </label>
+            <input spellcheck="false" type="search" id="search" name="search">
+          </div>
+          <div class="container">
+            <label for="textInput">Name: </label>
+            <input required type="text" id="textInput" placeholder="e.g John Smith" name="name">
+          </div>
+          <div class="container">
+            <label for="emailInput">E-mail: </label>
+            <input type="email" id="emailInput" placeholder="e.g JohnSmith@hotmail.com" name="email">
+          </div>
+          <div class="container">
+            <label for="otherEmailInput">Other E-mails: </label>
+            <input multiple type="email" id="otherEmailInput" placeholder="e.g JohnSmith@hotmail.com, js@gmail.com" name="otheremails">
+          </div>
+          <div class="container">
+            <label for="telephone">Tel Number: </label>
+            <input type="tel" id="telephone" name="telephone">
+          </div>
+          <div class="container">
+            <label For="passwordInput">Password: </label>
+            <input type="password" id="passwordInput" placeholder="..." name="password">
+          </div>
+          <div class="container">
+            <label for="ageInput">Age: </label>
+            <input type="number" id="ageInput" placeholder="e.g. 15" value="18" readonly name="age">
+          </div>
+          <div class="container">
+            <label for="children">Number of Children: </label>
+            <input type="number" id="children" min="0" max="10" step="2" name="children">
+          </div>
+          <div class="container">
+            <label for="dateInput">Date: </label>
+            <input type="date" id="dateInput" min="2025-01-01" max="2025-31-12" name="date">
+            <!-- also datetime-local, month, time, and week-->
+          </div>
+          <div class="container">
+            <label for="extraInfoInput">Extra Info: </label>
+            <textarea id="extraInfoInput" name="extraInfo" rows="5" cols="20">Initial Content</textarea>
+          </div>
+        </section>
+
+        <section>
+          <div class="container">
+            <label for="cars">Cars: </label>
+            <!-- can allow multiple selections -->
+            <select id="cars" name="cars">
+              <optgroup label="German">
+                <option value="merc">Mercedes</option>
+                <option value="volks">Volkswagen</option>
+              </optgroup>
+              <optgroup label="Other">
+                <option value="vaux" selected>Vauxhall</option>
+                <option value="ford">Ford</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="container">
+            <label for="maxPrice">Max Price: </label>
+            <input type="range" value="25000" min="1000" max="50000" step="500" name="max-price" id="maxPrice" list="prices">
+            <output for="maxPrice"></output>
+            <datalist id="prices">
+              <option>10000</option>
+              <option>20000</option>
+              <option>30000</option>
+              <option>40000</option>
+            </datalist>
+          </div>
+          <div class="container">
+            <label for="colour">Colour of car: </label>
+            <input type="color" name="colour" id="colour" list="colours">
+            <datalist id="colours">
+              <option>000000</option>
+              <option>FF0000</option>
+              <option>00FF00</option>
+              <option>0000FF</option>
+              <option>FFFFFF</option>
+            </datalist>
+          </div>
+          <div class="container">
+            <label for="url">URL for car website: </label>
+            <input type="url" name="url" id="url">
+          </div>
+        </section>
+        <section>
+          <fieldset class="container">
+            <legend>Ticket Type</legend>
+            <ul>
+              <li class="container">
+                <input value="c" type="radio" id="child" name="ticket" value="child">
+                <label for="child">Child</label>
+              </li>
+              <li class="container">
+                <input checked value="a" type="radio" id="adult" name="ticket" value="adult">
+                <label for="adult">Adult</label>
+              </li>
+              <li class="container">
+                <input value="s" type="radio" id="senior" name="ticket" value="senior">
+                <label for="senior">Senior</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="container">
+            <legend>Food</legend>
+            <ul>
+              <li class="container">
+                <input disabled type="checkbox" id="pizza" name="food" value="pizza">
+                <label for="pizza">Pizza</label>
+              </li>
+              <li class="container">
+                <input checked type="checkbox" id="beef" name="food" value="beef">
+                <label for="beef">Beef</label>
+              </li>
+              <li class="container">
+                <input type="checkbox" id="kale" name="food" value="kale">
+                <label for="kale">Kale</label>
+              </li>
+            </ul>
+          </fieldset>
+        </section>
+        <section>
+          <div class="container">
+            <label for="animal">Favourite animal: </label>
+            <input type="text" id="animal" name="favourite-animal" list="animalsList">
+            <datalist id="animalsList">
+              <option>pig</option>
+              <option>cow</option>
+              <option>horse</option>
+              <option>sheep</option>
+            </datalist>
+          </div>
+          <div class="container">
+            <label for="time">Time: </label>
+            <input type="time" id="time" name="time" min="09:00" max="17:00">
+          </div>
+          <div class="container">
+            <h4>Newsletter</h4>
+            <input checked type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter">Send me the newsletter</label>
+          </div>
+          <div class="container">
+            <label for="file">File: </label>
+            <input type="file" name="file" id="file" multiple accept="image/*;capture=camera">
+          </div>
+          <div class="container">
+            <meter min="0" max="100" value="80" low="33" high="66" optimum="100">80%</meter>
+          </div>
+          <div class="container">
+            <progress max="100" value="20">20/100</progress>
+          </div>
+        </section>
+        <section class="buttons">
+          <div class="container">
+            <button type="submit">Submit</button>
+          </div>
+          <div class="container">
+            <input type="image" name="imgbtn" id="imgbtn" alt="dinosaur" src="images/dinosaur.png">
+          </div>
+          <div class="container">
+            <button type="reset">Reset</button>
+          </div>
+          <div class="container">
+            <button type="button">Extra</button>
+          </div>
+        </section>
+      </form>
+      <div class="info-panel">
+        <h1>Info Panel</h1>
+        <div class="information">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
