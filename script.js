@@ -2,19 +2,19 @@ const maxPrice = document.querySelector("#maxPrice");
 const output = document.querySelector("#maxPrice ~ output");
 const containers = document.querySelectorAll(".container");
 const information = document.querySelector(".information");
+const form = document.querySelector("form");
+const wholeFormBtn = document.querySelector(".whole");
+
+listTagsAndAttrs(form, information, 0);
 
 output.textContent = maxPrice.value;
 
 maxPrice.addEventListener("input", evt => output.textContent=maxPrice.value);
 
+wholeFormBtn.addEventListener("click", evt => refillPanel(form));
 
 
-containers.forEach(container => {
-  container.addEventListener("mouseover", evt => {
-    information.querySelectorAll("*").forEach(child => child.remove());
-    listTagsAndAttrs(container, information, 0);
-  });
-});
+containers.forEach(container => container.addEventListener("mouseover", evt => refillPanel(container)));
 
 function listTagsAndAttrs(container, panel, offset) {
   for (let child of container.children) {
@@ -41,3 +41,9 @@ function listTagsAndAttrs(container, panel, offset) {
     panel.appendChild(div);
   };
 }
+
+function refillPanel(container) {
+  information.querySelectorAll("*").forEach(child => child.remove());
+  if (container.children.length !== 0) listTagsAndAttrs(container, information, 0);
+}
+

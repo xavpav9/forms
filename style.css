@@ -66,3 +66,8 @@ textarea {
   justify-content: space-evenly;
   align-items: center;
 }
+
+.whole {
+  margin: 0px auto;
+  display: block;
+}
