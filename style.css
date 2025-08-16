@@ -70,4 +70,16 @@ textarea {
 .whole {
   margin: 0px auto;
   display: block;
+  padding: 4px 8px;
+  background-color: #00FF00;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.whole:hover {
+  background-color: #00EE00;
+}
+
+.whole:active {
+  background-color: #00CC00;
 }
