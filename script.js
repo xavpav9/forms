@@ -2,7 +2,6 @@ const maxPrice = document.querySelector("#maxPrice");
 const output = document.querySelector("#maxPrice ~ output");
 const containers = document.querySelectorAll(".container");
 const information = document.querySelector(".information");
-let locked = false;
 
 output.textContent = maxPrice.value;
 
@@ -12,19 +11,8 @@ maxPrice.addEventListener("input", evt => output.textContent=maxPrice.value);
 
 containers.forEach(container => {
   container.addEventListener("mouseover", evt => {
-    if (locked) {
-      locked = false;
-      container.dispatchEvent(new Event("mouseout"));
-    }
+    information.querySelectorAll("*").forEach(child => child.remove());
     listTagsAndAttrs(container, information, 0);
-  });
-
-  container.addEventListener("mouseout", evt => {
-    if (!locked) information.querySelectorAll("*").forEach(child => child.remove()); 
-  });
-
-  container.addEventListener("click", evt => {
-    locked = true;
   });
 });
 
