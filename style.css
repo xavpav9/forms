@@ -30,9 +30,33 @@ form, .info-panel {
   border-radius: 10px;
   padding: 20px 10px;
   max-height: 80vh;
+}
+
+form, .information {
   overflow: auto;
-  overflow-wrap: nowrap;
   scrollbar-color: yellow rebeccapurple;
+}
+
+.information {
+  border: thin black solid;
+  min-height: 80%;
+}
+
+.info-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+#info-panel-search {
+  align-self: center;
+}
+
+.info-panel-search-div {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
 }
 
 fieldset {
@@ -82,4 +106,8 @@ textarea {
 
 .whole:active {
   background-color: #00CC00;
+}
+
+.searched {
+  background-color: yellow;
 }

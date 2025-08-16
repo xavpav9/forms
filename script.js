@@ -4,6 +4,7 @@ const containers = document.querySelectorAll(".container");
 const information = document.querySelector(".information");
 const form = document.querySelector("form");
 const wholeFormBtn = document.querySelector(".whole");
+const search = document.querySelector("#info-panel-search");
 
 listTagsAndAttrs(form, information, 0);
 
@@ -13,8 +14,16 @@ maxPrice.addEventListener("input", evt => output.textContent=maxPrice.value);
 
 wholeFormBtn.addEventListener("click", evt => refillPanel(form));
 
-
 containers.forEach(container => container.addEventListener("mouseover", evt => refillPanel(container)));
+
+search.addEventListener("keyup", evt => {
+  const regex = new RegExp(RegExp.escape(search.value), "gim");
+  information.querySelectorAll("p, h3").forEach(element => {
+    element.classList.remove("searched");
+    if (element.textContent.search(regex) !== -1 && search.value !== "") element.classList.add("searched");
+  });
+
+});
 
 function listTagsAndAttrs(container, panel, offset) {
   for (let child of container.children) {
